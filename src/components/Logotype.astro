@@ -8,34 +8,36 @@ import Logo from "../assets/Logo.svg";
     <div class="text">Lumphammer</div>
 </a>
 
-<style>
-.logotype {
-  font-family: "Alfa Slab One", serif;
-  filter: var(--lumphammer-logo-filter);
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
-  align-items: center;
+<style lang="scss">
+    @use "../styles/mixins.scss" as *;
+    @use "@picocss/pico/scss/colors" as *;
 
-  @include light-theme(&) {
-    filter: drop-shadow(0.05em 0.05em 0.05em #fff)
-      drop-shadow(0.1em 0.1em 0.1em #0004);
-    --lumphammer-logo-svg-color: #{$cyan-750};
-    color: #{$cyan-650};
-  }
-  @include dark-theme(&) {
-    filter: drop-shadow(0 0 0.5em var(--pico-primary));
-    --lumphammer-logo-svg-color: #{$cyan-50};
-    color: white;
-  }
-  svg {
-    fill: var(--lumphammer-logo-svg-color);
-  }
-}
+    .logotype {
+        font-family: "Alfa Slab One", serif;
+        filter: var(--lumphammer-logo-filter);
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+        align-items: center;
 
-.text {
-  margin: 0;
-  text-transform: uppercase;
-}
+        @include light-theme(&) {
+            filter: drop-shadow(0.05em 0.05em 0.05em #fff)
+                drop-shadow(0.1em 0.1em 0.1em #0004);
+            --lumphammer-logo-svg-color: #{$cyan-750};
+            color: #{$cyan-650};
+        }
+        @include dark-theme(&) {
+            filter: drop-shadow(0 0 0.5em var(--pico-primary));
+            --lumphammer-logo-svg-color: #{$cyan-50};
+            color: white;
+        }
+        svg {
+            fill: var(--lumphammer-logo-svg-color);
+        }
+    }
 
+    .text {
+        margin: 0;
+        text-transform: uppercase;
+    }
 </style>
