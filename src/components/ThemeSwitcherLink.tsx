@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "./themeSwitcher.module.scss";
 import useCycleBrowserTheme from "./useBrowserTheme";
 
