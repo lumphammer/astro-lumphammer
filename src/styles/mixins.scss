@@ -31,7 +31,7 @@
       }
     }
     // specificity hack to override the default light theme in pico
-    [data-theme="light"][data-theme="light"] {
+    :root[data-theme="light"][data-theme="light"] {
       #{$selector} {
         @content;
       }
@@ -63,7 +63,7 @@
       }
     }
     // specificity hack to override the default dark theme in pico
-    [data-theme="dark"][data-theme="dark"] {
+    :root[data-theme="dark"][data-theme="dark"] {
       #{$selector} {
         @content;
       }
