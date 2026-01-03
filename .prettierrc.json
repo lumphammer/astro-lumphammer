@@ -1,5 +1,14 @@
 {
-  "plugins": ["@prettier/plugin-xml"],
+  "plugins": ["@prettier/plugin-xml", "prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ],
+
   "xmlWhitespaceSensitivity": "ignore",
   "xmlQuoteAttributes": "double"
 }

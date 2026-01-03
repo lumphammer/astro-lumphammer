@@ -8,62 +8,62 @@ import "../styles/main.scss";
 ---
 
 <script is:inline>
-function setThemeBeforePageDraws() {
-  const storedTheme = localStorage.getItem("theme");
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-  document.documentElement.setAttribute("data-system-theme", systemTheme);
-  if (storedTheme === "light" || storedTheme === "dark") {
-    console.log("setting theme", storedTheme);
-    document.documentElement.setAttribute("data-theme", storedTheme);
+  function setThemeBeforePageDraws() {
+    const storedTheme = localStorage.getItem("theme");
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    document.documentElement.setAttribute("data-system-theme", systemTheme);
+    if (storedTheme === "light" || storedTheme === "dark") {
+      console.log("setting theme", storedTheme);
+      document.documentElement.setAttribute("data-theme", storedTheme);
+    }
   }
-}
-setThemeBeforePageDraws();
+  setThemeBeforePageDraws();
 </script>
 
-<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Lumphammer</title>
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Lumphammer</title>
+  </head>
 
-    <!-- <CSPostHogProvider> -->
-    <body>
-        <!-- <script
+  <!-- <CSPostHogProvider> -->
+  <body>
+    <!-- <script
         dangerouslySetInnerHTML={{
           __html: `(${setThemeBeforePageDraws.toString()})();`,
         }}
       /> -->
-        <SvgFilters />
-        <header>
-            <div class="container">
-                <Logotype />
-                <div class="links">
-                    <Navigation client:load />
-                </div>
-            </div>
-        </header>
-        <slot />
-        <footer class="container"></footer>
-    </body>
-    <!-- </CSPostHogProvider> -->
+    <SvgFilters />
+    <header>
+      <div class="container">
+        <Logotype />
+        <div class="links">
+          <Navigation client:load />
+        </div>
+      </div>
+    </header>
+    <slot />
+    <footer class="container"></footer>
+  </body>
+  <!-- </CSPostHogProvider> -->
 </html>
 
 <style>
-    html,
-    body {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-    }
-    .links {
-        display: flex;
-        gap: 1em;
-        flex-direction: row;
-    }
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .links {
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+  }
 </style>
