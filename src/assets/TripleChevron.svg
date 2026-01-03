@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg
-    aria-hidden="true"
-    width="24"
-    height="24"
-    viewBox="0 0 28 14"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    style="margin: 0.5em; display: inline-block; vertical-align: middle;"
+  aria-hidden="true"
+  width="24"
+  height="24"
+  viewBox="0 0 28 14"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  style="margin: 0.5em; display: inline-block; vertical-align: middle;"
 >
     <path d="m0,0 7 7 -7 7" />
     <path d="m10,0 7 7 -7 7" />
