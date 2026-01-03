@@ -11,9 +11,11 @@
     "format:fix": "prettier --write .",
     "lint:check": "oxlint",
     "lint:fix": "oxlint --fix",
-    "check": "pnpm run lint:check && pnpm run format:check && pnpm run build"
+    "type:check": "astro check",
+    "check": "pnpm run type:check && pnpm run lint:check && pnpm run format:check && pnpm run build"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.6",
     "@astrojs/react": "^4.4.2",
     "@picocss/pico": "^2.1.1",
     "@prettier/plugin-xml": "^3.4.2",
@@ -26,6 +28,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-icons": "^5.5.0",
-    "sass-embedded": "^1.97.1"
+    "sass-embedded": "^1.97.1",
+    "typescript": "^5.9.3"
   }
 }
