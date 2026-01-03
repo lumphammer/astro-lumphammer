@@ -1,81 +1,81 @@
 @use "../styles/mixins.scss" as *;
 
 .themeSwitcher {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .sun {
-    display: none;
-    :root[data-theme="light"] & {
-        display: inline;
-    }
+  display: none;
+  :root[data-theme="light"] & {
+    display: inline;
+  }
 }
 
 .moon {
-    display: none;
-    :root[data-theme="dark"] & {
-        display: inline;
-    }
+  display: none;
+  :root[data-theme="dark"] & {
+    display: inline;
+  }
 }
 
 .system {
-    display: none;
-    :root:not([data-theme]) & {
-        display: inline;
-    }
+  display: none;
+  :root:not([data-theme]) & {
+    display: inline;
+  }
 }
 
 .themeSwitcherLink {
-    font-size: 0.9rem;
-    svg {
-        font-size: 1.2em;
-        vertical-align: middle;
-    }
+  font-size: 0.9rem;
+  svg {
+    font-size: 1.2em;
+    vertical-align: middle;
+  }
 }
 
 .switchLight {
-    display: none;
-    :root:not([data-theme])[data-system-theme="dark"] & {
-        display: inline;
-    }
-    :root[data-theme="dark"][data-system-theme="light"] & {
-        display: inline;
-    }
+  display: none;
+  :root:not([data-theme])[data-system-theme="dark"] & {
+    display: inline;
+  }
+  :root[data-theme="dark"][data-system-theme="light"] & {
+    display: inline;
+  }
 }
 
 .switchDark {
-    display: none;
-    :root:not([data-theme])[data-system-theme="light"] & {
-        display: inline;
-    }
-    :root[data-theme="light"][data-system-theme="dark"] & {
-        display: inline;
-    }
+  display: none;
+  :root:not([data-theme])[data-system-theme="light"] & {
+    display: inline;
+  }
+  :root[data-theme="light"][data-system-theme="dark"] & {
+    display: inline;
+  }
 }
 
 .switchSystem {
-    display: none;
-    :root[data-theme="light"][data-system-theme="light"] & {
-        display: inline;
-    }
-    :root[data-theme="dark"][data-system-theme="dark"] & {
-        display: inline;
-    }
+  display: none;
+  :root[data-theme="light"][data-system-theme="light"] & {
+    display: inline;
+  }
+  :root[data-theme="dark"][data-system-theme="dark"] & {
+    display: inline;
+  }
 }
 
 .switchSystemDark {
-    display: none;
-    :root[data-system-theme="dark"] & {
-        display: inline;
-    }
+  display: none;
+  :root[data-system-theme="dark"] & {
+    display: inline;
+  }
 }
 
 .switchSystemLight {
-    display: none;
-    :root[data-system-theme="light"] & {
-        display: inline;
-    }
+  display: none;
+  :root[data-system-theme="light"] & {
+    display: inline;
+  }
 }

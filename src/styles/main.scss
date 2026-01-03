@@ -9,82 +9,82 @@
 @import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 :root {
-    --pico-font-family: "Geist", sans-serif;
-    --pico-nav-element-spacing-vertical: 0;
-    // font-family: "Geist", sans-serif;
+  --pico-font-family: "Geist", sans-serif;
+  --pico-nav-element-spacing-vertical: 0;
+  // font-family: "Geist", sans-serif;
 }
 
 @include light-theme("&") {
-    --pico-background-color: #{$sand-100};
-    --pico-color: var(--lumphammer-color);
-    --pico-primary-inverse: #{$sand-50};
-    --pico-primary: #{$cyan-650};
-    --pico-primary-background: #{$cyan-550};
-    --pico-primary-focus: #{$cyan-450};
-    --pico-primary-hover-background: #{$cyan-450};
-    --pico-secondary: #{$red-700};
-    //
-    --lumphammer-menu-background: #{$sand-50}77;
-    --lumphammer-color: #{$sand-900};
-    --lumphammer-header-background-color: #{$sand-150};
-    --pico-muted-border-color: #{$sand-250};
+  --pico-background-color: #{$sand-100};
+  --pico-color: var(--lumphammer-color);
+  --pico-primary-inverse: #{$sand-50};
+  --pico-primary: #{$cyan-650};
+  --pico-primary-background: #{$cyan-550};
+  --pico-primary-focus: #{$cyan-450};
+  --pico-primary-hover-background: #{$cyan-450};
+  --pico-secondary: #{$red-700};
+  //
+  --lumphammer-menu-background: #{$sand-50}77;
+  --lumphammer-color: #{$sand-900};
+  --lumphammer-header-background-color: #{$sand-150};
+  --pico-muted-border-color: #{$sand-250};
 }
 
 @include dark-theme("&") {
-    --pico-text-selection-color: #{$cyan-350}44;
-    --pico-primary: #{$cyan-300};
-    --pico-primary-background: #{$cyan-450};
-    --pico-primary-underline: #{$cyan-450};
-    --pico-primary-hover: #{$cyan-100};
-    --pico-primary-hover-background: #{$cyan-550};
-    --pico-primary-focus: #{$cyan-550};
-    --pico-primary-inverse: #fff;
-    --pico-background-color: #{$sand-900};
-    --pico-font-weight: 300;
-    //
-    --lumphammer-menu-background: #{$sand-950}cc;
-    --lumphammer-color: #{$sand-50};
-    button:focus {
-        --pico-box-shadow: 0 0 2em #{$cyan-350};
-    }
-    --lumphammer-header-background-color: #{$sand-850};
-    --pico-muted-border-color: #{$grey-650};
+  --pico-text-selection-color: #{$cyan-350}44;
+  --pico-primary: #{$cyan-300};
+  --pico-primary-background: #{$cyan-450};
+  --pico-primary-underline: #{$cyan-450};
+  --pico-primary-hover: #{$cyan-100};
+  --pico-primary-hover-background: #{$cyan-550};
+  --pico-primary-focus: #{$cyan-550};
+  --pico-primary-inverse: #fff;
+  --pico-background-color: #{$sand-900};
+  --pico-font-weight: 300;
+  //
+  --lumphammer-menu-background: #{$sand-950}cc;
+  --lumphammer-color: #{$sand-50};
+  button:focus {
+    --pico-box-shadow: 0 0 2em #{$cyan-350};
+  }
+  --lumphammer-header-background-color: #{$sand-850};
+  --pico-muted-border-color: #{$grey-650};
 
-    a {
-        // border: 100px solid transparent;
-        // text-decoration: none;
-        position: relative;
-        &:before {
-            content: "";
-            display: block;
-            // border: 4em solid transparent;
-            position: absolute;
-            top: -2em;
-            left: -2em;
-            width: calc(100% + 4em);
-            height: calc(100% + 4em);
-            pointer-events: none;
-        }
-        @media (hover: hover) {
-            &:hover {
-                filter: url(#soft-focus);
-            }
-        }
+  a {
+    // border: 100px solid transparent;
+    // text-decoration: none;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      // border: 4em solid transparent;
+      position: absolute;
+      top: -2em;
+      left: -2em;
+      width: calc(100% + 4em);
+      height: calc(100% + 4em);
+      pointer-events: none;
     }
+    @media (hover: hover) {
+      &:hover {
+        filter: url(#soft-focus);
+      }
+    }
+  }
 }
 
 body > header {
-    @include light-theme(&) {
-        // box-shadow: 0 0 1em #{$cyan-850}77;
-        // background: linear-gradient(to top, #{$sand-250}, #{$sand-150} 50%);
-        border-bottom: 1px solid #{$sand-450}77;
-    }
-    @include dark-theme(&) {
-        box-shadow: 0 0 0.8em #{$cyan-250}77;
-        // background: linear-gradient(to top, #{$cyan-350}77, #{$sand-850});
-        border-bottom: 1px solid #{$cyan-250}77;
-        // border-bottom: 1px solid #{$sand-650}77;
-    }
+  @include light-theme(&) {
+    // box-shadow: 0 0 1em #{$cyan-850}77;
+    // background: linear-gradient(to top, #{$sand-250}, #{$sand-150} 50%);
+    border-bottom: 1px solid #{$sand-450}77;
+  }
+  @include dark-theme(&) {
+    box-shadow: 0 0 0.8em #{$cyan-250}77;
+    // background: linear-gradient(to top, #{$cyan-350}77, #{$sand-850});
+    border-bottom: 1px solid #{$cyan-250}77;
+    // border-bottom: 1px solid #{$sand-650}77;
+  }
 }
 
 h1,
@@ -93,98 +93,98 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Alfa Slab One", serif;
-    font-weight: normal;
-    letter-spacing: 0.04em;
+  font-family: "Alfa Slab One", serif;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  mark {
+    font-weight: inherit;
+  }
+  @include light-theme(&) {
+    color: #{$grey-700};
     mark {
-        font-weight: inherit;
+      filter: //
+        url(#inner-shadow) //
+        url(#solid-stroke-2) //
+        url(#extrude-5); //
     }
-    @include light-theme(&) {
-        color: #{$grey-700};
-        mark {
-            filter: //
-                url(#inner-shadow) //
-                url(#solid-stroke-2) //
-                url(#extrude-5); //
-        }
-    }
+  }
 }
 
 body > header {
-    background-color: var(--lumphammer-header-background-color);
-    padding: 0;
-    margin-bottom: 2em;
-    a {
-        // border: 100px solid transparent;
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
+  background-color: var(--lumphammer-header-background-color);
+  padding: 0;
+  margin-bottom: 2em;
+  a {
+    // border: 100px solid transparent;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }
 
 mark {
-    --pico-mark-color: transparent;
-    --pico-mark-background-color: transparent;
-    font-weight: bold;
-    @include light-theme(&) {
-        color: #{$red-500};
-        padding: 0;
+  --pico-mark-color: transparent;
+  --pico-mark-background-color: transparent;
+  font-weight: bold;
+  @include light-theme(&) {
+    color: #{$red-500};
+    padding: 0;
 
-        //
-        background: linear-gradient(
-            to right in oklch,
-            #{$fuchsia-600},
-            #{$cyan-600}
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+    //
+    background: linear-gradient(
+      to right in oklch,
+      #{$fuchsia-600},
+      #{$cyan-600}
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
-        filter: //
+    filter: //
       // url(#inner-shadow) //
-            url(#solid-stroke-1); // drop-shadow(0.1em 0.1em 0 #{$red-800}); // url(#extrudel2) // //
-        margin-right: 0.2em;
-        // font-weight: normal;
-        // font-family: "Alfa Slab One", serif;
-        // text-shadow: 1px 1px 0 white, 2px 2px 0 var(--pico-secondary);
+      url(#solid-stroke-1); // drop-shadow(0.1em 0.1em 0 #{$red-800}); // url(#extrudel2) // //
+    margin-right: 0.2em;
+    // font-weight: normal;
+    // font-family: "Alfa Slab One", serif;
+    // text-shadow: 1px 1px 0 white, 2px 2px 0 var(--pico-secondary);
+  }
+  @include dark-theme(&) {
+    filter: url(#soft-focus);
+    padding: 0;
+    background: linear-gradient(
+      to right in oklch,
+      #{$fuchsia-300},
+      #{$cyan-300}
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    &:before {
+      content: "";
+      display: block;
+      // border: 4em solid transparent;
+      position: absolute;
+      top: -2em;
+      left: -2em;
+      width: calc(100% + 4em);
+      height: calc(100% + 4em);
+      pointer-events: none;
     }
-    @include dark-theme(&) {
-        filter: url(#soft-focus);
-        padding: 0;
-        background: linear-gradient(
-            to right in oklch,
-            #{$fuchsia-300},
-            #{$cyan-300}
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        position: relative;
-        &:before {
-            content: "";
-            display: block;
-            // border: 4em solid transparent;
-            position: absolute;
-            top: -2em;
-            left: -2em;
-            width: calc(100% + 4em);
-            height: calc(100% + 4em);
-            pointer-events: none;
-        }
-    }
+  }
 }
 
 a[aria-current] {
-    color: var(--pico-text);
+  color: var(--pico-text);
 }
 
 body > header > .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 article {
-    --pico-border-radius: 0.5em;
+  --pico-border-radius: 0.5em;
 }

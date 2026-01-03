@@ -2,70 +2,69 @@
 @use "@picocss/pico/scss/colors" as *;
 
 .grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
 
-    article {
-        border: 1px solid var(--pico-border);
-        margin: 0;
-        border-radius: 0.2em;
-        // see https://stackoverflow.com/questions/9807620/ipad-safari-scrolling-causes-html-elements-to-disappear-and-reappear-with-a-dela
-        transform: translate3d(0, 0, 0);
+  article {
+    border: 1px solid var(--pico-border);
+    margin: 0;
+    border-radius: 0.2em;
+    // see https://stackoverflow.com/questions/9807620/ipad-safari-scrolling-causes-html-elements-to-disappear-and-reappear-with-a-dela
+    transform: translate3d(0, 0, 0);
 
-        @include light-theme(&) {
-            background-color: #{$zinc-50};
-            // box-shadow: 0 0.1em 1em #{$cyan-800}22 inset, 0 0.1em 1em #{$cyan-800}22;
-            box-shadow: //
-                rgb(94, 98, 71) 0px 0.5px 0.4px 0px,
-                //
-                rgba(94, 98, 71, 0.82) 0px 0.9px 0.7px -1.7px,
-                //
-                rgba(94, 98, 71, 0.55) 0px 4px 3px -3.3px,
-                //
-                rgba(94, 98, 71, 0.27) 0px 12.2px 9.2px -5px; //
-            border: 1px solid #{$sand-200};
-            border-radius: 0;
-        }
-        @include dark-theme(&) {
-            background-color: #{$sand-950};
-            box-shadow:
+    @include light-theme(&) {
+      background-color: #{$zinc-50};
+      // box-shadow: 0 0.1em 1em #{$cyan-800}22 inset, 0 0.1em 1em #{$cyan-800}22;
+      box-shadow: //
+        rgb(94, 98, 71) 0px 0.5px 0.4px 0px,
         //
-                -0.1em -0.1em 0.7em #{$cyan-400},
-                //
-                0.1em 0.1em 0.7em #{$fuchsia-400},
-                //
-                3em 3em 3em #{$cyan-400}22 inset,
-                -3em -3em 3em #{$fuchsia-400}11 inset;
-            border-width: 1px;
-            border-style: solid;
-            border-color: #{$cyan-200} #{$fuchsia-200} #{$fuchsia-200}
-                #{$cyan-200};
-        }
+        rgba(94, 98, 71, 0.82) 0px 0.9px 0.7px -1.7px,
+        //
+        rgba(94, 98, 71, 0.55) 0px 4px 3px -3.3px,
+        //
+        rgba(94, 98, 71, 0.27) 0px 12.2px 9.2px -5px; //
+      border: 1px solid #{$sand-200};
+      border-radius: 0;
     }
+    @include dark-theme(&) {
+      background-color: #{$sand-950};
+      box-shadow:
+        //
+        -0.1em -0.1em 0.7em #{$cyan-400},
+        //
+        0.1em 0.1em 0.7em #{$fuchsia-400},
+        //
+        3em 3em 3em #{$cyan-400}22 inset,
+        -3em -3em 3em #{$fuchsia-400}11 inset;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #{$cyan-200} #{$fuchsia-200} #{$fuchsia-200} #{$cyan-200};
+    }
+  }
 }
 .recursionError {
-    border: 5px solid #{$red-450};
-    background-color: #{$grey-900};
+  border: 5px solid #{$red-450};
+  background-color: #{$grey-900};
+  --pico-color: #{$red-450};
+  --pico-font-family: monospace;
+  --pico-accordion-close-summary-color: #{$red-450};
+  --pico-accordion-open-summary-color: #{$red-450};
+  --pico-accordion-active-summary-color: #{$red-450};
+  font-family: monospace;
+  text-align: center;
+  padding: 1em;
+  margin-bottom: 1em;
+  details {
     --pico-color: #{$red-450};
-    --pico-font-family: monospace;
-    --pico-accordion-close-summary-color: #{$red-450};
-    --pico-accordion-open-summary-color: #{$red-450};
-    --pico-accordion-active-summary-color: #{$red-450};
-    font-family: monospace;
-    text-align: center;
-    padding: 1em;
-    margin-bottom: 1em;
-    details {
-        --pico-color: #{$red-450};
-        summary::after {
-            content: "";
-            // the ai gave me this - it's fucking wild.
-            // I'm calling it the 6932% solution.
-            filter: //
-                sepia(95%) //
-                saturate(6932%) //
-                hue-rotate(358deg);
-        }
+    summary::after {
+      content: "";
+      // the ai gave me this - it's fucking wild.
+      // I'm calling it the 6932% solution.
+      filter: //
+        sepia(95%) //
+        saturate(6932%) //
+        hue-rotate(358deg);
     }
+  }
 }

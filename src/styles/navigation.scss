@@ -5,90 +5,90 @@
 $breakpoint: 768px;
 
 nav {
-    position: relative;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  // background: white;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Desktop Navigation */
+  .desktop-nav {
+    display: none;
+    @media (min-width: $breakpoint) {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+  /* Mobile Hamburger Button */
+  button {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+    --pico-color: var(--lumphammer-color);
+    &:is(:hover, :active, :focus) {
+      --pico-color: var(--lumphammer-color);
+    }
+    @media (min-width: $breakpoint) {
+      display: none;
+    }
+
+    span {
+      width: 2rem;
+      height: 0.25rem;
+      background: var(--pico-color);
+      border-radius: 10px;
+      transition: all 0.3s linear;
+    }
+  }
+  /* Mobile Popover Menu */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(50px);
+    background: var(--lumphammer-menu-background);
+    z-index: 5;
+    animation: slideIn 0.3s ease-out;
+    overflow-y: auto;
+    &.fade-out {
+      animation: fadeOut 300ms ease-out;
+      animation-fill-mode: forwards;
+      pointer-events: none;
+    }
+  }
+
+  .mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
-    // background: white;
-    // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-    /* Desktop Navigation */
-    .desktop-nav {
-        display: none;
-        @media (min-width: $breakpoint) {
-            display: flex;
-            gap: 2rem;
-        }
-    }
-    /* Mobile Hamburger Button */
-    button {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 2rem;
-        height: 2rem;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        z-index: 10;
-        --pico-color: var(--lumphammer-color);
-        &:is(:hover, :active, :focus) {
-            --pico-color: var(--lumphammer-color);
-        }
-        @media (min-width: $breakpoint) {
-            display: none;
-        }
-
-        span {
-            width: 2rem;
-            height: 0.25rem;
-            background: var(--pico-color);
-            border-radius: 10px;
-            transition: all 0.3s linear;
-        }
-    }
-    /* Mobile Popover Menu */
-    .mobile-menu {
-        position: fixed;
-        inset: 0;
-        backdrop-filter: blur(50px);
-        background: var(--lumphammer-menu-background);
-        z-index: 5;
-        animation: slideIn 0.3s ease-out;
-        overflow-y: auto;
-        &.fade-out {
-            animation: fadeOut 300ms ease-out;
-            animation-fill-mode: forwards;
-            pointer-events: none;
-        }
-    }
-
-    .mobile-menu-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        gap: 2rem;
-        font-size: 1.5rem;
-    }
+    height: 100%;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
 }
 
 @keyframes slideIn {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
