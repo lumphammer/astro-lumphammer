@@ -11,7 +11,7 @@
     "format:fix": "prettier --write .",
     "lint:check": "oxlint",
     "lint:fix": "oxlint --fix",
-    "check": "pnpm run lint:check && pnpm run format:check"
+    "check": "pnpm run lint:check && pnpm run format:check && pnpm run build"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
