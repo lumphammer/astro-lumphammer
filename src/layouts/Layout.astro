@@ -7,6 +7,21 @@ import "../styles/pico.scss";
 import "../styles/main.scss";
 ---
 
+<script is:inline>
+function setThemeBeforePageDraws() {
+  const storedTheme = localStorage.getItem("theme");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+  document.documentElement.setAttribute("data-system-theme", systemTheme);
+  if (storedTheme === "light" || storedTheme === "dark") {
+    console.log("setting theme", storedTheme);
+    document.documentElement.setAttribute("data-theme", storedTheme);
+  }
+}
+setThemeBeforePageDraws();
+</script>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -29,7 +44,7 @@ import "../styles/main.scss";
             <div class="container">
                 <Logotype />
                 <div class="links">
-                    <Navigation />
+                    <Navigation client:load />
                 </div>
             </div>
         </header>

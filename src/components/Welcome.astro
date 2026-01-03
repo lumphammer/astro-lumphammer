@@ -1,6 +1,7 @@
 ---
 import Logo from "../assets/Logo.svg";
 import TripleChevron from "../TripleChevron.astro";
+import {ThemeSwitcherLink} from "./ThemeSwitcherLink.tsx";
 ---
 
 <script></script>
@@ -41,7 +42,7 @@ import TripleChevron from "../TripleChevron.astro";
                 </a>
             </li>
             <li>
-                <!-- <ThemeSwitcherLink /> -->
+                <ThemeSwitcherLink client:load />
             </li>
         </ul>
     </div>
