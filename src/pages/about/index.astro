@@ -1,9 +1,10 @@
 ---
-import neil_warsaw from "./Neil_Warsaw.jpg";
-import jadeSunset from "./Jade_Sunset.webp";
-import styles from "./about.module.scss";
-import theCats from "./The_Cats.jpg";
+import neil_warsaw from "./_assets/Neil_Warsaw.jpg";
+import jadeSunset from "./_assets/Jade_Sunset.webp";
+import styles from "./_assets/about.module.scss";
+import theCats from "./_assets/The_Cats.jpg";
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
@@ -53,8 +54,8 @@ import Layout from "../../layouts/Layout.astro";
         </p>
         <p>Jade lives with her husband Neil, and two cats.</p>
       </div>
-      <img
-        src={jadeSunset.src}
+      <Image
+        src={jadeSunset}
         alt="A photo of Jade with a sunset in the background."
         class="about-image"
       />

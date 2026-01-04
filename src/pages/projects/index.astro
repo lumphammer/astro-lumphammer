@@ -1,9 +1,10 @@
 ---
-import styles from "./projects.module.scss";
-import investigatorImageFull from "./investigator.webp";
-import investigatorThumbnail from "./investigator_thumbnail.webp";
-import toc2eQuickstartImageFull from "./toc-2e-quickstart.webp";
-import pubCrusadeScreenshot from "./pub-crusade-screenshot.webp";
+import styles from "./_assets/projects.module.scss";
+import { Image } from "astro:assets";
+import investigatorImageFull from "./_assets/investigator.webp";
+import investigatorThumbnail from "./_assets/investigator_thumbnail.webp";
+import toc2eQuickstartImageFull from "./_assets/toc-2e-quickstart.webp";
+import pubCrusadeScreenshot from "./_assets/pub-crusade-screenshot.webp";
 import Layout from "../../layouts/Layout.astro";
 ---
 
@@ -18,8 +19,8 @@ import Layout from "../../layouts/Layout.astro";
         </h2>
         <p>
           <a href={investigatorImageFull.src} target="_blank">
-            <img
-              src={investigatorThumbnail.src}
+            <Image
+              src={investigatorThumbnail}
               alt="Screenshot of GUMSHOE for Foundry VTT"
             />
           </a>
