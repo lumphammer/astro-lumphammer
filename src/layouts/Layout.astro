@@ -16,7 +16,6 @@ import "../styles/main.scss";
       : "light";
     document.documentElement.setAttribute("data-system-theme", systemTheme);
     if (storedTheme === "light" || storedTheme === "dark") {
-      console.log("setting theme", storedTheme);
       document.documentElement.setAttribute("data-theme", storedTheme);
     }
   }
