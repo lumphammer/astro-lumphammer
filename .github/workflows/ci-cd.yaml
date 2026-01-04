@@ -33,11 +33,17 @@ jobs:
         #   KEY_EXPIRATION_TIME_MS: ${{ vars.KEY_EXPIRATION_TIME_MS }}
         run: pnpm run build
 
-      - name: Upload static files as artifact
+      - name: Upload dist
         uses: actions/upload-artifact@v4
         with:
           path: dist/
           name: dist
+
+      - name: Upload wrangler.toml
+        uses: actions/upload-artifact@v4
+        with:
+          path: wrangler.toml
+          name: wrangler.toml
 
   # we deploy in a separate job to ensure that we absolutely cannot accidentally
   # send sensitive data from the source code to the public site (note that
@@ -52,16 +58,23 @@ jobs:
     name: Publish to Cloudflare Pages
     needs: build
     steps:
-      - name: Download artifact
+      - name: Download dist
         uses: actions/download-artifact@v4
         with:
           name: dist
+          path: dist
+
+      - name: Download wrangler.toml
+        uses: actions/download-artifact@v4
+        with:
+          name: wrangler.toml
 
       - uses: pnpm/action-setup@v4
         with:
           version: latest
 
-      - run: pnpm add wrangler@4
+      - name: Install wrangler
+        run: pnpm add wrangler@4
 
       - name: Instrument folder
         run: |
