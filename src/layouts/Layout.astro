@@ -5,6 +5,7 @@ import { Navigation } from "../components/Navigation.tsx";
 import "../styles/globals.css";
 import "../styles/pico.scss";
 import "../styles/main.scss";
+import PostHog from "../components/PostHog.astro";
 
 const { pathname } = Astro.url;
 ---
@@ -31,15 +32,10 @@ const { pathname } = Astro.url;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>Lumphammer</title>
+    <PostHog />
   </head>
 
-  <!-- <CSPostHogProvider> -->
   <body>
-    <!-- <script
-        dangerouslySetInnerHTML={{
-          __html: `(${setThemeBeforePageDraws.toString()})();`,
-        }}
-      /> -->
     <SvgFilters />
     <header>
       <div class="container">
@@ -52,7 +48,6 @@ const { pathname } = Astro.url;
     <slot />
     <footer class="container"></footer>
   </body>
-  <!-- </CSPostHogProvider> -->
 </html>
 
 <style>
