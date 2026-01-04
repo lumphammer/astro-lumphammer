@@ -28,9 +28,6 @@ jobs:
           npx tsc --version
 
       - name: Build
-        # env:
-        #   SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        #   KEY_EXPIRATION_TIME_MS: ${{ vars.KEY_EXPIRATION_TIME_MS }}
         run: pnpm run build
 
       - name: Upload dist
@@ -45,9 +42,8 @@ jobs:
           path: wrangler.toml
           name: wrangler.toml
 
-  # we deploy in a separate job to ensure that we absolutely cannot accidentally
-  # send sensitive data from the source code to the public site (note that
-  # there is no `checkout` step in this job).
+  # we deploy in a separate job to be certain that we're not accidentally
+  # uploading source code
   deploy:
     runs-on: ubuntu-latest
     # only if branch is main
@@ -73,6 +69,8 @@ jobs:
         with:
           version: latest
 
+      # force the wrangler version be preinstalling it
+      # https://github.com/cloudflare/wrangler-action/issues/390
       - name: Install wrangler
         run: pnpm add wrangler@4
 
@@ -88,6 +86,3 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
-          # directory: .
-          # gitHubToken: ${{ secrets.GITHUB_TOKEN }}
