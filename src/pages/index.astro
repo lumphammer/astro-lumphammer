@@ -1,11 +1,86 @@
 ---
-import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Logo from "../assets/Logo.svg";
+import TripleChevron from "../TripleChevron.astro";
+import { ThemeSwitcherLink } from "../components/ThemeSwitcherLink.tsx";
 ---
 
 <Layout>
-  <Welcome />
+  <main class="container">
+    <div class="hook">
+      <Logo aria-hidden={true} class="logo" />
+
+      <h1 style={{ lineHeight: "1.3em" }}>
+        <mark>Bespoke software development</mark> for the{" "}
+        <mark>TTRPG industry</mark>
+      </h1>
+      <p class="intro">
+        Hi! <mark>Lumphammer</mark> is a husband & wife team offering{" "}
+        <mark>software development</mark> and <mark>VTT conversions</mark> for the
+        TTRPG industry.
+      </p>
+      <ul class="links">
+        <li>
+          <a href="/projects">
+            <TripleChevron />See our <mark>projects</mark><TripleChevron />
+          </a>
+        </li>
+        <li>
+          <a href="/about">
+            <TripleChevron />Find out <mark>about us</mark><TripleChevron />
+          </a>
+        </li>
+        <li>
+          <a href="/contact">
+            <TripleChevron />Get in <mark>touch</mark><TripleChevron />
+          </a>
+        </li>
+        <li>
+          <ThemeSwitcherLink client:load />
+        </li>
+      </ul>
+    </div>
+  </main>
 </Layout>
+
+<style>
+  @use "@picocss/pico/scss/colors" as *;
+
+  .hook {
+    text-align: center;
+    max-width: 60ch;
+    margin: 0 auto;
+    /* padding: 0 1em; */
+  }
+
+  .logo {
+    position: absolute;
+    inset: 0 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+    max-width: 20em;
+    opacity: 0.1;
+    z-index: -1;
+  }
+
+  .intro {
+    margin-bottom: 2em;
+    margin-top: 2em;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      font-weight: 200;
+      font-size: 1.5em;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+</style>
