@@ -5,6 +5,8 @@ import { Navigation } from "../components/Navigation.tsx";
 import "../styles/globals.css";
 import "../styles/pico.scss";
 import "../styles/main.scss";
+
+const { pathname } = Astro.url;
 ---
 
 <script is:inline>
@@ -43,7 +45,7 @@ import "../styles/main.scss";
       <div class="container">
         <Logotype />
         <div class="links">
-          <Navigation client:load />
+          <Navigation currentPath={pathname} client:load />
         </div>
       </div>
     </header>
