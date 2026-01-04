@@ -5,9 +5,12 @@ import react from "@astrojs/react";
 
 import rehypeExternalLinks from "rehype-external-links";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
+
   markdown: {
     rehypePlugins: [
       [
@@ -16,4 +19,6 @@ export default defineConfig({
       ],
     ],
   },
+
+  adapter: cloudflare(),
 });
