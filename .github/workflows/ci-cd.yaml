@@ -42,7 +42,7 @@ jobs:
         with:
           path: dist/
           name: dist
-          include-hidden-files: true
+          include-hidden-files: true # needed to ensure .assestignore is sent
 
       - name: Upload wrangler.toml
         uses: actions/upload-artifact@v6
