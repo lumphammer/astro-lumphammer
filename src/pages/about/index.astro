@@ -35,9 +35,10 @@ import { Image } from "astro:assets";
         <p>Neil lives with his wife Jade, and two cats.</p>
       </div>
 
-      <img
-        src={neil_warsaw.src}
+      <Image
+        src={neil_warsaw}
         alt="A photo of a man (Neil) wearing glasses and a t-shirt, with a cat on his lap."
+        class="about-image"
       />
     </section>
 
@@ -92,8 +93,8 @@ import { Image } from "astro:assets";
           Instagram page.
         </p>
       </div>
-      <img
-        src={theCats.src}
+      <Image
+        src={theCats}
         alt="A photo of Jade with a sunset in the background."
         class="about-image"
       />

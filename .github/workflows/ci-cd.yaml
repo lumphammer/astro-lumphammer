@@ -30,11 +30,19 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Instrument folder
+        run: |
+          echo "ls -la dist/"
+          ls -la dist/
+          echo "cat dist/.assetsignore"
+          cat dist/.assetsignore
+
       - name: Upload dist
         uses: actions/upload-artifact@v4
         with:
           path: dist/
           name: dist
+          include-hidden-files: true
 
       - name: Upload wrangler.toml
         uses: actions/upload-artifact@v4
@@ -76,10 +84,13 @@ jobs:
 
       - name: Instrument folder
         run: |
-          echo pwd
           pwd
-          echo ls -l
-          ls -l
+          echo "ls -la"
+          ls -la
+          echo "ls -la dist/"
+          ls -la dist/
+          echo "cat dist/.assetsignore"
+          cat dist/.assetsignore
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
