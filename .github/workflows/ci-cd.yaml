@@ -76,10 +76,13 @@ jobs:
 
       - name: Instrument folder
         run: |
-          echo pwd
           pwd
-          echo ls -l
-          ls -l
+          echo "ls -la"
+          ls -la
+          echo "ls -la dist/"
+          ls -la dist/
+          echo "cat dist/.assetsignore"
+          cat dist/.assetsignore
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
