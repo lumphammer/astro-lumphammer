@@ -38,14 +38,14 @@ jobs:
           cat dist/.assetsignore
 
       - name: Upload dist
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           path: dist/
           name: dist
           include-hidden-files: true
 
       - name: Upload wrangler.toml
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           path: wrangler.toml
           name: wrangler.toml
@@ -63,13 +63,13 @@ jobs:
     needs: build
     steps:
       - name: Download dist
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: dist
           path: dist
 
       - name: Download wrangler.toml
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: wrangler.toml
 
