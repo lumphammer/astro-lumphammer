@@ -6,8 +6,6 @@ import "../styles/globals.css";
 import "../styles/pico.scss";
 import "../styles/main.scss";
 import PostHog from "../components/PostHog.astro";
-
-const { pathname } = Astro.url;
 ---
 
 <script is:inline>
@@ -41,7 +39,7 @@ const { pathname } = Astro.url;
       <div class="container">
         <Logotype />
         <div class="links">
-          <Navigation currentPath={pathname} client:load />
+          <Navigation currentPath={Astro.url.pathname} client:load />
         </div>
       </div>
     </header>
