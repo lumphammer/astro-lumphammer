@@ -10,7 +10,11 @@ type NavigationLinkProps = PropsWithChildren<{
 export function NavigationLink({ to, children }: NavigationLinkProps) {
   const { currentPath } = useNavigationContext();
   return (
-    <a href={to} aria-current={to === currentPath ? "page" : undefined}>
+    <a
+      href={to}
+      aria-current={to === currentPath ? "page" : undefined}
+      data-currentpath={currentPath}
+    >
       {children}
     </a>
   );
