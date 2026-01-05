@@ -2,6 +2,7 @@ name = "astro-lumphammer"
 compatibility_date = "2026-01-04"
 main = "dist/_worker.js/index.js"
 
+
 compatibility_flags= [
   "nodejs_compat",
   "global_fetch_strictly_public"
@@ -10,6 +11,7 @@ compatibility_flags= [
 [assets]
 binding = "ASSETS"
 directory = "./dist"
+html_handling = "drop-trailing-slash"
 
 [observability]
 enabled = true
