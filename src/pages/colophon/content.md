@@ -7,7 +7,7 @@ Don't read on unless you care about technology stacks.
 ## Tools
 
 * [Affinity Studio](https://affinity.studio)
-* [Zed Editor](https://zed.sh/)
+* [Zed Editor](https://zed.dev/)
 
 ## Fonts
 
