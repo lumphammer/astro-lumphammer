@@ -44,7 +44,7 @@ export const server = {
     // input: z.object({
     //   format: z.string().default("YYYY-MM-DD HH:mm:ss"),
     // }),
-    handler: async (input) => {
+    handler: async () => {
       const date = new Date();
       return date.toLocaleString("en-GB", {
         timeZone: "UTC",
