@@ -1,8 +1,6 @@
-    
 # Colophon
 
 Don't read on unless you care about technology stacks.
-
 
 ## Tools
 
@@ -17,7 +15,7 @@ Don't read on unless you care about technology stacks.
 ## Stack
 
 * [Astro](https://astro.build/)
-8 [TypeScript](https://www.typescriptlang.org/)
+* [TypeScript](https://www.typescriptlang.org/)
 * [Cloudflare Workers](https://workers.cloudflare.com/)
 * [PicoCSS](https://picocss.com/)
 * [Sass](https://sass-lang.com/)
