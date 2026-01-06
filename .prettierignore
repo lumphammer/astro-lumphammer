@@ -1,2 +1,4 @@
 *.md
 *.markdown
+*.yaml
+*yml
