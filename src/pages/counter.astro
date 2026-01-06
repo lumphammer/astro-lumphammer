@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <main class="container">
+    <h1>Counter</h1>
+    <div id="hello">Not loaded</div>
+    <div id="date-time">Not loaded</div>
+  </main>
+</Layout>
+
+<script>
+  import { actions } from "astro:actions";
+
+  const { data, error } = await actions.hello({ name: "World" });
+  const el = document.getElementById("hello");
+  if (el) {
+    el.textContent = data ?? "Null?";
+  }
+
+  const { data: dateData, error: dateError } = await actions.dateAndTime();
+  const dateEl = document.getElementById("date-time");
+  if (dateEl) {
+    dateEl.textContent = dateData ?? "Null?";
+  }
+</script>
