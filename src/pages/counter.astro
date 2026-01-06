@@ -7,6 +7,8 @@ import Layout from "../layouts/Layout.astro";
     <h1>Counter</h1>
     <div id="hello">Not loaded</div>
     <div id="date-time">Not loaded</div>
+    <div id="counter">Not loaded</div>
+    <button id="increment">Increment</button>
   </main>
 </Layout>
 
@@ -23,5 +25,21 @@ import Layout from "../layouts/Layout.astro";
   const dateEl = document.getElementById("date-time");
   if (dateEl) {
     dateEl.textContent = dateData ?? "Null?";
+  }
+
+  const { data: counterData } = await actions.counter();
+  const counterEl = document.getElementById("counter");
+  if (counterEl) {
+    counterEl.textContent = counterData?.toString() ?? "Null?";
+  }
+
+  const incrementButton = document.getElementById("increment");
+  if (incrementButton) {
+    incrementButton.addEventListener("click", async () => {
+      const { data: newCounterData } = await actions.increment({});
+      if (counterEl) {
+        counterEl.textContent = newCounterData?.toString() ?? "Null?";
+      }
+    });
   }
 </script>

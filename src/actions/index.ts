@@ -31,6 +31,8 @@ export default {
 } satisfies ExportedHandler<{ KV: KVNamespace }>;
 */
 
+// const baz = 3;
+
 export const server = {
   hello: defineAction({
     input: z.object({
@@ -50,6 +52,40 @@ export const server = {
         timeZone: "UTC",
         timeZoneName: "short",
       });
+    },
+  }),
+  // increment the "counter" value in kv by one and return the new value
+  increment: defineAction({
+    input: z.object({
+      incrementBy: z.number().min(1).default(1),
+    }),
+    handler: async (_input, context) => {
+      // @ts-expect-error maybe
+      const counterText = await context.locals.runtime.env.COUNTER_KV.get(
+        "counter",
+        "text",
+      );
+      const current = parseInt(counterText ?? "0", 10);
+      const newCounter = current + _input.incrementBy;
+      // @ts-expect-error maybe
+      await context.locals.runtime.env.COUNTER_KV.put(
+        "counter",
+        newCounter.toString(),
+      );
+      return newCounter;
+    },
+  }),
+
+  // return the current value of the "counter" key in kv
+  counter: defineAction({
+    handler: async (_input, context) => {
+      // @ts-expect-error maybe
+      const counterText = await context.locals.runtime.env.COUNTER_KV.get(
+        "counter",
+        "text",
+      );
+      const current = parseInt(counterText ?? "0", 10);
+      return current;
     },
   }),
 };
