@@ -19,7 +19,7 @@ binding = "COUNTER_KV"
 id = "fa052c8d3c134446954fc15b730df7d8"
 
 [[durable_objects.bindings]]
-name = "ChatRoom",
+name = "ChatRoom"
 class_name = "ChatRoom"
 
 [[migrations]]
