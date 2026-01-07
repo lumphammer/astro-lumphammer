@@ -18,7 +18,7 @@ interface ChatMessage {
   timestamp: number;
 }
 
-class ChatRoom extends DurableObject<Env> {
+export class ChatRoom extends DurableObject<Env> {
   // Map of WebSocket -> session data
   // When the DO hibernates, this gets reconstructed in the constructor
   private sessions: Map<WebSocket, SessionAttachment>;
@@ -263,16 +263,42 @@ class ChatRoom extends DurableObject<Env> {
     await this.ctx.storage.setAlarm(Date.now() + 60 * 60 * 1000);
   }
 }
+//
+
+class MyDurableObject extends DurableObject<Env> {
+  constructor(ctx: DurableObjectState, env: Env) {
+    super(ctx, env);
+  }
+}
+
+// export function createExports(manifest: SSRManifest) {
+//   const app = new App(manifest);
+//   return {
+//     default: {
+//       async fetch(request, env, ctx) {
+//         // @xts-expect-error - request is not typed correctly
+//         return handle(manifest, app, request, env, ctx);
+//       },
+//     } satisfies ExportedHandler<Env>,
+//     // ChatRoom,
+//   };
+// }
 
 export function createExports(manifest: SSRManifest) {
   const app = new App(manifest);
   return {
     default: {
       async fetch(request, env, ctx) {
+        // await env.MY_QUEUE.send("log");
         // @ts-expect-error - request is not typed correctly
         return handle(manifest, app, request, env, ctx);
       },
+      async queue(batch, _env) {
+        let messages = JSON.stringify(batch.messages);
+        console.log(`consumed from our queue: ${messages}`);
+      },
     } satisfies ExportedHandler<Env>,
+    MyDurableObject: MyDurableObject,
     ChatRoom,
   };
 }
