@@ -60,14 +60,12 @@ export const server = {
       incrementBy: z.number().min(1).default(1),
     }),
     handler: async (_input, context) => {
-      // @ts-expect-error maybe
       const counterText = await context.locals.runtime.env.COUNTER_KV.get(
         "counter",
         "text",
       );
       const current = parseInt(counterText ?? "0", 10);
       const newCounter = current + _input.incrementBy;
-      // @ts-expect-error maybe
       await context.locals.runtime.env.COUNTER_KV.put(
         "counter",
         newCounter.toString(),
@@ -79,7 +77,6 @@ export const server = {
   // return the current value of the "counter" key in kv
   counter: defineAction({
     handler: async (_input, context) => {
-      // @ts-expect-error maybe
       const counterText = await context.locals.runtime.env.COUNTER_KV.get(
         "counter",
         "text",
