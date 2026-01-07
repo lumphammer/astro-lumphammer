@@ -13,7 +13,8 @@
     "lint:fix": "oxlint --fix",
     "type:check": "astro check",
     "check": "pnpm run type:check && pnpm run lint:check && pnpm run format:check && pnpm run build",
-    "deploy:preview": "pnpm run check && wrangler versions upload"
+    "deploy:preview": "pnpm run check && wrangler versions upload",
+    "cloudflare-types": "wrangler types src/worker-configuration.d.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",

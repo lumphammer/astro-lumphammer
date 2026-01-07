@@ -5,6 +5,9 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "types": ["./worker-configuration.d.ts"],
+    // https://developers.cloudflare.com/workers/languages/typescript/ says to
+    // add the workers types manually here, but it's an ambient declaration so
+    // that isn't needed... unless I'm missing something
+    // "types": ["./src/worker-configuration.d.ts"],
   },
 }

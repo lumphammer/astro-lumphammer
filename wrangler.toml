@@ -1,3 +1,13 @@
+# ##############################################################################
+#
+# Remember to run
+#
+#     pnpm run cloudflare-types
+#
+# Any time you modify this file!
+#
+# ##############################################################################
+
 name = "astro-lumphammer"
 compatibility_date = "2026-01-04"
 main = "dist/_worker.js/index.js"
