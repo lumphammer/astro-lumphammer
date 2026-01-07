@@ -18,13 +18,13 @@ interface ChatMessage {
   timestamp: number;
 }
 
-class ChatRoom extends DurableObject<ENV> {
+class ChatRoom extends DurableObject<Env> {
   // Map of WebSocket -> session data
   // When the DO hibernates, this gets reconstructed in the constructor
   private sessions: Map<WebSocket, SessionAttachment>;
   private messageHistory: ChatMessage[];
 
-  constructor(ctx: DurableObjectState, env: ENV) {
+  constructor(ctx: DurableObjectState, env: Env) {
     super(ctx, env);
 
     this.sessions = new Map();
@@ -272,7 +272,7 @@ export function createExports(manifest: SSRManifest) {
         // @ts-expect-error - request is not typed correctly
         return handle(manifest, app, request, env, ctx);
       },
-    } satisfies ExportedHandler<ENV>,
+    } satisfies ExportedHandler<Env>,
     ChatRoom,
   };
 }
