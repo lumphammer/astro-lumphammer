@@ -9,7 +9,7 @@ Don't read on unless you care about technology stacks.
 
 ## Fonts
 
-* [Alfa Slab One](https://fonts.google.com/specimen/Alfa+Slab+One) (A lovely chunky font by [José Solé](https://jmsole.cl/).)
+* [Alfa Slab One](https://fonts.google.com/specimen/Alfa+Slab+One) (A lovely chunky font by [José Solé of Dogray Type](https://www.dograytype.com/).)
 * [Geist Sans](https://vercel.com/font) (A clean sans-serif body font.)
 
 ## Stack
