@@ -24,7 +24,7 @@ export default defineConfig({
     imageService: "compile",
     workerEntryPoint: {
       path: "./src/worker.ts",
-      namedExports: ["MyDurableObject"],
+      // namedExports: ["MyDurableObject"],
     },
   }),
 });
