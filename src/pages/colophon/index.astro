@@ -1,11 +1,14 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Content } from "./content.md";
+
+const dateStringUTCISO = new Date().toISOString();
 ---
 
 <Layout>
   <main class={"container"}>
     <Content />
+    Built at <small>{dateStringUTCISO}</small>
   </main>
 </Layout>
 
