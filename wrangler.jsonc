@@ -2,7 +2,7 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "astro-lumphammer",
   "compatibility_date": "2026-01-04",
-  "main": "dist/_worker.js/index.js",
+  "main": "src/worker.ts",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "binding": "ASSETS",
