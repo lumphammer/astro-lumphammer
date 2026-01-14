@@ -1,28 +1,14 @@
-import type { SSRManifest } from "astro";
-import { App } from "astro/app";
-import { handle } from "@astrojs/cloudflare/handler";
-import { DurableObject } from "cloudflare:workers";
+import handler from "@astrojs/cloudflare/entrypoints/server";
+// import { DurableObject } from "cloudflare:workers";
 
-class MyDurableObject extends DurableObject<Env> {
-  constructor(ctx: DurableObjectState, env: Env) {
-    super(ctx, env);
-  }
-}
+// export class MyDurableObject extends DurableObject<Env> {
+//   constructor(ctx: DurableObjectState, env: Env) {
+//     super(ctx, env);
+//   }
+// }
 
-export function createExports(manifest: SSRManifest) {
-  const app = new App(manifest);
-  return {
-    default: {
-      async fetch(request, env, ctx) {
-        // await env.MY_QUEUE.send("log");
-        // @ts-expect-error request is not typed correctly
-        return handle(manifest, app, request, env, ctx);
-      },
-      async queue(batch, _env) {
-        let messages = JSON.stringify(batch.messages);
-        console.log(`consumed from our queue: ${messages}`);
-      },
-    } satisfies ExportedHandler<Env>,
-    MyDurableObject: MyDurableObject,
-  };
-}
+export default {
+  async fetch(request, env, ctx) {
+    return handler.fetch(request, env, ctx);
+  },
+} satisfies ExportedHandler<Env>;
