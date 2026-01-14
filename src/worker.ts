@@ -8,7 +8,9 @@ import handler from "@astrojs/cloudflare/entrypoints/server";
 // }
 
 export default {
+  // @ts-expect-error return value is not typed correctly
   async fetch(request, env, ctx) {
+    // @ts-expect-error request is not typed correctly
     return handler.fetch(request, env, ctx);
   },
 } satisfies ExportedHandler<Env>;
