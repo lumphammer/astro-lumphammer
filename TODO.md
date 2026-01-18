@@ -20,8 +20,8 @@ This file contains suggestions from a code review conducted on the astro-lumpham
 
 ### 4. Type Safety in Worker
 
-- [ ] Consider adding explicit type annotations to `src/worker.ts` parameters instead of using `@ts-expect-error`
-- [ ] Or file an issue upstream with `@astrojs/cloudflare` if types are broken
+- [x] Consider adding explicit type annotations to `src/worker.ts` parameters instead of using `@ts-expect-error`
+- [x] Or file an issue upstream with `@astrojs/cloudflare` if types are broken
 
 ### 5. Non-null Assertion in Navigation
 
