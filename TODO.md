@@ -41,11 +41,9 @@ This file contains suggestions from a code review conducted on the astro-lumpham
 
 - [x] In `src/actions/index.ts`, rename `_input` to `input` in the `increment` handler since `incrementBy` is actually used
 
-### 8. Counter Page (Dev/Test Page)
+### 8. Counter Page (Dev/Test Page) - WONTFIX
 
-- [ ] Decide whether `/counter` should be in production
-- [ ] Consider moving to a dev-only location or removing
-- [ ] At minimum, exclude from sitemap if keeping
+This is a playground project, so the counter page is intentional and doesn't need to be hidden or excluded from any sitemap.
 
 ### 9. Dynamic Page Titles
 
