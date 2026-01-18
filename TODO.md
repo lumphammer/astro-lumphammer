@@ -6,12 +6,12 @@ This file contains suggestions from a code review conducted on the astro-lumpham
 
 ### 1. Misplaced Component: `TripleChevron.astro`
 
-- [ ] Move `src/TripleChevron.astro` to `src/components/TripleChevron.astro`
-- [ ] Fix typo: `margin: "00.5em"` should be `margin: "0 0.5em"`
+- [x] Move `src/TripleChevron.astro` to `src/components/TripleChevron.astro`
+- [x] Fix typo: `margin: "00.5em"` should be `margin: "0 0.5em"`
 
 ### 2. Duplicate Asset
 
-- [ ] Remove `src/assets/TripleChevron copy.svg` (appears to be an accidental copy)
+- [x] Remove `src/assets/TripleChevron copy.svg` (appears to be an accidental copy)
 
 ### 3. Empty CSS Rules in `globals.css`
 
