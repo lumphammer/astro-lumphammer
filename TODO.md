@@ -47,9 +47,9 @@ This is a playground project, so the counter page is intentional and doesn't nee
 
 ### 9. Dynamic Page Titles
 
-- [ ] Add a `title` prop to `src/layouts/Layout.astro`
-- [ ] Update each page to pass an appropriate title
-- [ ] Use format like `{title} | Lumphammer` or just `Lumphammer` for home
+- [x] Add a `title` prop to `src/layouts/Layout.astro`
+- [x] Update each page to pass an appropriate title
+- [x] Use format like `{title} | Lumphammer` or just `Lumphammer` for home
 
 ### 10. Self-host Geist Font
 
