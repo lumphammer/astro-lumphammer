@@ -25,7 +25,7 @@ This file contains suggestions from a code review conducted on the astro-lumpham
 
 ### 5. Non-null Assertion in Navigation
 
-- [ ] Replace `document.body.parentElement!` in `src/components/Navigation.tsx` with safer access:
+- [x] Replace `document.body.parentElement!` in `src/components/Navigation.tsx` with safer access:
   ```tsx
   const htmlElement = document.documentElement;
   if (htmlElement) {
