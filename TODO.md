@@ -39,7 +39,7 @@ This file contains suggestions from a code review conducted on the astro-lumpham
 
 ### 7. Rename Underscore-prefixed Variable in Actions
 
-- [ ] In `src/actions/index.ts`, rename `_input` to `input` in the `increment` handler since `incrementBy` is actually used
+- [x] In `src/actions/index.ts`, rename `_input` to `input` in the `increment` handler since `incrementBy` is actually used
 
 ### 8. Counter Page (Dev/Test Page)
 

@@ -60,10 +60,10 @@ export const server = {
     input: z.object({
       incrementBy: z.number().min(1).default(1),
     }),
-    handler: async (_input, _context) => {
+    handler: async (input) => {
       const counterText = await env.COUNTER_KV.get("counter", "text");
       const current = parseInt(counterText ?? "0", 10);
-      const newCounter = current + _input.incrementBy;
+      const newCounter = current + input.incrementBy;
       await env.COUNTER_KV.put("counter", newCounter.toString());
       return newCounter;
     },
