@@ -1,0 +1,58 @@
+diff --git a/dist/vite-plugin-css/index.js b/dist/vite-plugin-css/index.js
+index bf2f97b39025afaf145f9f4522bb911f6a9ef0f8..5f77415f9009ade914a48ff33f22887f7ba1e19c 100644
+--- a/dist/vite-plugin-css/index.js
++++ b/dist/vite-plugin-css/index.js
+@@ -37,12 +37,14 @@ function* collectCSSWithOrder(id, mod, seen = /* @__PURE__ */ new Set()) {
+ }
+ function astroDevCssPlugin({ routesList, command }) {
+   let environment = void 0;
++  let astroEnvironment = void 0;
+   const cssContentCache = /* @__PURE__ */ new Map();
+   return [
+     {
+       name: MODULE_DEV_CSS,
+       async configureServer(server) {
+         environment = server.environments[ASTRO_VITE_ENVIRONMENT_NAMES.ssr];
++        astroEnvironment = server.environments[ASTRO_VITE_ENVIRONMENT_NAMES.astro];
+       },
+       resolveId: {
+         filter: {
+@@ -70,16 +72,22 @@ function astroDevCssPlugin({ routesList, command }) {
+               RESOLVED_MODULE_DEV_CSS_PREFIX,
+               id
+             );
++            const envToUse = environment?.runner ? environment : astroEnvironment;
++            if (!envToUse?.runner) {
++              return {
++                code: "export const css = new Set()"
++              };
++            }
+             const cssWithOrder = /* @__PURE__ */ new Map();
+             const componentPageId = getVirtualModulePageNameForComponent(componentPath);
+-            await environment?.runner?.import(componentPageId);
+-            const resolved = await environment?.pluginContainer.resolveId(componentPageId);
++            await envToUse.runner.import(componentPageId);
++            const resolved = await envToUse.pluginContainer.resolveId(componentPageId);
+             if (!resolved?.id) {
+               return {
+                 code: "export const css = new Set()"
+               };
+             }
+-            const mod = environment?.moduleGraph.getModuleById(resolved.id);
++            const mod = envToUse.moduleGraph.getModuleById(resolved.id);
+             if (!mod) {
+               return {
+                 code: "export const css = new Set()"
+diff --git a/dist/vite-plugin-pages/page.js b/dist/vite-plugin-pages/page.js
+index 9b738c58fd3ef9ec4353c71f5988b534d116ed4f..d7f87131d44dedbc2f3dfc6720d35ab961f8de85 100644
+--- a/dist/vite-plugin-pages/page.js
++++ b/dist/vite-plugin-pages/page.js
+@@ -7,7 +7,7 @@ function pluginPage({ routesList }) {
+   return {
+     name: "@astro/plugin-page",
+     applyToEnvironment(environment) {
+-      return environment.name === ASTRO_VITE_ENVIRONMENT_NAMES.ssr || environment.name === ASTRO_VITE_ENVIRONMENT_NAMES.prerender;
++      return environment.name === ASTRO_VITE_ENVIRONMENT_NAMES.ssr || environment.name === ASTRO_VITE_ENVIRONMENT_NAMES.prerender || environment.name === ASTRO_VITE_ENVIRONMENT_NAMES.astro;
+     },
+     resolveId: {
+       filter: {
