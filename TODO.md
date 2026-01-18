@@ -15,8 +15,8 @@ This file contains suggestions from a code review conducted on the astro-lumpham
 
 ### 3. Empty CSS Rules in `globals.css`
 
-- [ ] Either remove the empty rulesets or uncomment the variables if needed
-- [ ] Linter warnings at lines 1 and 7 for empty rules
+- [x] Either remove the empty rulesets or uncomment the variables if needed
+- [x] Linter warnings at lines 1 and 7 for empty rules
 
 ### 4. Type Safety in Worker
 
