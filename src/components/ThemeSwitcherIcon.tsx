@@ -1,5 +1,3 @@
-"use client";
-
 import { FaSun, FaMoon, FaDesktop } from "react-icons/fa6";
 import styles from "./themeSwitcher.module.scss";
 import useCycleBrowserTheme from "./useBrowserTheme";

@@ -35,7 +35,7 @@ This file contains suggestions from a code review conducted on the astro-lumpham
 
 ### 6. Remove Unnecessary `"use client"` Directive
 
-- [ ] Remove `"use client"` from `src/components/ThemeSwitcherIcon.tsx` (Astro handles client hydration via `client:*` directives)
+- [x] Remove `"use client"` from `src/components/ThemeSwitcherIcon.tsx` (Astro handles client hydration via `client:*` directives)
 
 ### 7. Rename Underscore-prefixed Variable in Actions
 
