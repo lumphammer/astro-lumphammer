@@ -78,9 +78,9 @@ The following core dependencies are beta versions:
 
 This is intentional - the project's purpose is to try out the Astro beta.
 
-### 2. Future Compatibility Date
+### 2. Future Compatibility Date - WONTFIX
 
-- [ ] Change `compatibility_date` in `wrangler.jsonc` from `2026-01-04` to a valid past date
+The `compatibility_date` of `2026-01-04` in `wrangler.jsonc` is valid - it's in the past now.
 
 ### 3. PostHog API Key
 
