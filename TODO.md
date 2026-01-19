@@ -63,7 +63,7 @@ This is a playground project, so the counter page is intentional and doesn't nee
 
 ### 12. Remove Debug Attribute
 
-- [ ] Remove `data-currentpath={currentPath}` from `src/components/NavigationLink.tsx`
+- [x] Remove `data-currentpath={currentPath}` from `src/components/NavigationLink.tsx`
 
 ## 🔴 Potential Issues
 
