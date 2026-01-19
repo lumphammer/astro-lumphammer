@@ -67,17 +67,16 @@ This is a playground project, so the counter page is intentional and doesn't nee
 
 ## 🔴 Potential Issues
 
-### 1. Beta Dependencies
+### 1. Beta Dependencies - WONTFIX
 
-The following core dependencies are beta versions, which may be unstable:
+The following core dependencies are beta versions:
 
 - `astro: 6.0.0-beta.1`
 - `@astrojs/cloudflare: 13.0.0-beta.0`
 - `@astrojs/react: 5.0.0-beta.1`
 - `@astrojs/check: 0.9.6-beta.1`
 
-- [ ] Consider pinning to stable versions for production
-- [ ] Or monitor for breaking changes carefully
+This is intentional - the project's purpose is to try out the Astro beta.
 
 ### 2. Future Compatibility Date
 
