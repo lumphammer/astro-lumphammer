@@ -58,8 +58,8 @@ This is a playground project, so the counter page is intentional and doesn't nee
 
 ### 11. Add Meta Descriptions
 
-- [ ] Add `<meta name="description">` to the Layout
-- [ ] Consider making it configurable per-page for better SEO
+- [x] Add `<meta name="description">` to the Layout
+- [x] Consider making it configurable per-page for better SEO
 
 ### 12. Remove Debug Attribute
 
