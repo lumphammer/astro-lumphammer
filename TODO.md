@@ -82,9 +82,9 @@ This is intentional - the project's purpose is to try out the Astro beta.
 
 The `compatibility_date` of `2026-01-04` in `wrangler.jsonc` is valid - it's in the past now.
 
-### 3. PostHog API Key
+### 3. PostHog API Key - WONTFIX
 
-- [ ] Consider moving the PostHog API key to an environment variable for flexibility (note: client-side analytics keys are expected to be public, so this is low priority)
+Client-side analytics keys are expected to be public, and keeping it in source is fine for this project.
 
 ## ✅ Strengths (No Action Needed)
 
