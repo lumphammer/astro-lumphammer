@@ -53,8 +53,8 @@ This is a playground project, so the counter page is intentional and doesn't nee
 
 ### 10. Self-host Geist Font
 
-- [ ] Replace Google Fonts import with local font (there's already a commented local import in `main.scss`)
-- [ ] This improves performance and avoids render-blocking external requests
+- [x] Replace Google Fonts import with local font (there's already a commented local import in `main.scss`)
+- [x] This improves performance and avoids render-blocking external requests
 
 ### 11. Add Meta Descriptions
 

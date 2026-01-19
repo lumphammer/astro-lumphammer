@@ -4,9 +4,7 @@
 @use "./navigation.scss";
 
 @import "../../public/fonts/AlfaSlabOne-Regular/stylesheet.css";
-// @import "../../public/fonts/Geist/stylesheet.css";
-
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
+@import "../../public/fonts/Geist/stylesheet.css";
 
 :root {
   --pico-font-family: "Geist", sans-serif;
