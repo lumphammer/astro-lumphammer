@@ -14,7 +14,6 @@ export function NavigationLink({ to, children }: NavigationLinkProps) {
     <a
       href={to}
       aria-current={toTrimmed === currentPathTrimmed ? "page" : undefined}
-      data-currentpath={currentPath}
     >
       {children}
     </a>
