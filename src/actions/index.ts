@@ -33,7 +33,7 @@ export const server = {
     input: z.object({
       incrementBy: z.number().min(1).default(1),
     }),
-    handler: async (_input, context) => {
+    handler: async (_input, _context) => {
       const counterText = await env.COUNTER_KV.get("counter", "text");
       const current = parseInt(counterText ?? "0", 10);
       const newCounter = current + _input.incrementBy;
@@ -44,7 +44,7 @@ export const server = {
 
   // return the current value of the "counter" key in kv
   counter: defineAction({
-    handler: async (_input, context) => {
+    handler: async (_input, _context) => {
       const counterText = await env.COUNTER_KV.get("counter", "text");
       const current = parseInt(counterText ?? "0", 10);
       return current;
