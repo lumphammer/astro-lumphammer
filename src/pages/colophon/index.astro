@@ -5,7 +5,10 @@ import { Content } from "./content.md";
 const dateStringUTCISO = new Date().toISOString();
 ---
 
-<Layout title="Colophon">
+<Layout
+  title="Colophon"
+  description="Technical details about how the Lumphammer website was built, including tools, fonts, and technology stack."
+>
   <main class={"container"}>
     <Content />
     Built at <small>{dateStringUTCISO}</small>
