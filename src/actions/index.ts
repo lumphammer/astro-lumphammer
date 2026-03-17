@@ -1,35 +1,9 @@
 import { defineAction } from "astro:actions";
 import { z } from "astro/zod";
+import { env } from "cloudflare:workers";
 
 // https://developers.cloudflare.com/kv/
 // https://docs.astro.build/en/guides/actions/
-
-/*
-export default {
-  async fetch(request, env, ctx): Promise<Response> {
-    // write a key-value pair
-    await env.KV.put('KEY', 'VALUE');
-
-    // read a key-value pair
-    const value = await env.KV.get('KEY');
-
-    // list all key-value pairs
-    const allKeys = await env.KV.list();
-
-    // delete a key-value pair
-    await env.KV.delete('KEY');
-
-    // return a Workers response
-    return new Response(
-      JSON.stringify({
-        value: value,
-        allKeys: allKeys,
-      }),
-    );
-  },
-
-} satisfies ExportedHandler<{ KV: KVNamespace }>;
-*/
 
 // const baz = 3;
 
@@ -60,16 +34,10 @@ export const server = {
       incrementBy: z.number().min(1).default(1),
     }),
     handler: async (_input, context) => {
-      const counterText = await context.locals.runtime.env.COUNTER_KV.get(
-        "counter",
-        "text",
-      );
+      const counterText = await env.COUNTER_KV.get("counter", "text");
       const current = parseInt(counterText ?? "0", 10);
       const newCounter = current + _input.incrementBy;
-      await context.locals.runtime.env.COUNTER_KV.put(
-        "counter",
-        newCounter.toString(),
-      );
+      await env.COUNTER_KV.put("counter", newCounter.toString());
       return newCounter;
     },
   }),
@@ -77,10 +45,7 @@ export const server = {
   // return the current value of the "counter" key in kv
   counter: defineAction({
     handler: async (_input, context) => {
-      const counterText = await context.locals.runtime.env.COUNTER_KV.get(
-        "counter",
-        "text",
-      );
+      const counterText = await env.COUNTER_KV.get("counter", "text");
       const current = parseInt(counterText ?? "0", 10);
       return current;
     },
