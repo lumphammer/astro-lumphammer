@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "ls -la dist/"
           ls -la dist/
-          echo "cat dist/.assetsignore"
+          echo "cat dist/client/.assetsignore"
           cat dist/client/.assetsignore
 
       - name: Upload dist
@@ -89,8 +89,8 @@ jobs:
           ls -la
           echo "ls -la dist/"
           ls -la dist/
-          echo "cat dist/.assetsignore"
-          cat dist/.assetsignore
+          echo "cat dist/client/.assetsignore"
+          cat dist/client/.assetsignore
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
