@@ -10,6 +10,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
+  output: "static",
 
   markdown: {
     rehypePlugins: [
@@ -22,9 +23,5 @@ export default defineConfig({
 
   adapter: cloudflare({
     imageService: "compile",
-    workerEntryPoint: {
-      path: "./src/worker.ts",
-      // namedExports: ["MyDurableObject"],
-    },
   }),
 });
