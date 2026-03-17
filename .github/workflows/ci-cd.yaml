@@ -44,11 +44,11 @@ jobs:
           name: dist
           include-hidden-files: true # needed to ensure .assestignore is sent
 
-      - name: Upload wrangler.jsonc
+      - name: Upload .wrangler
         uses: actions/upload-artifact@v7
         with:
-          path: wrangler.jsonc
-          name: wrangler.jsonc
+          path: .wrangler/
+          name: .wrangler
 
   # we deploy in a separate job to be certain that we're not accidentally
   # uploading source code
@@ -68,10 +68,10 @@ jobs:
           name: dist
           path: dist
 
-      - name: Download wrangler.jsonc
+      - name: Download .wrangler
         uses: actions/download-artifact@v8
         with:
-          name: wrangler.jsonc
+          name: .wrangler
 
       - uses: pnpm/action-setup@v4
         with:
