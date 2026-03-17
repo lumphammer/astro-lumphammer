@@ -73,6 +73,7 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: .wrangler
+          path: .wrangler
 
       - uses: pnpm/action-setup@v4
         with:
