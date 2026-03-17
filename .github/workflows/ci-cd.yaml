@@ -49,6 +49,7 @@ jobs:
         with:
           path: .wrangler/
           name: .wrangler
+          include-hidden-files: true
 
   # we deploy in a separate job to be certain that we're not accidentally
   # uploading source code
