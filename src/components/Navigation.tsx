@@ -12,7 +12,7 @@ export function Navigation({ currentPath }: { currentPath: string }) {
     setFadingOut(true);
     setTimeout(() => {
       setIsOpen(false);
-      document.body.parentElement!.style.overflow = "auto";
+      document.documentElement.style.overflow = "auto";
     }, 300);
   }, []);
 
@@ -22,7 +22,7 @@ export function Navigation({ currentPath }: { currentPath: string }) {
     } else {
       setFadingOut(false);
       setIsOpen(true);
-      document.body.parentElement!.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     }
   }, [isOpen, closeMenu]);
 
