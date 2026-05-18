@@ -22,11 +22,11 @@
     "@astrojs/react": "^5.0.5",
     "@picocss/pico": "^2.1.1",
     "@prettier/plugin-xml": "^3.4.2",
-    "@types/node": "^25.7.0",
+    "@types/node": "^25.8.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "astro": "^6.3.2",
-    "oxlint": "^1.64.0",
+    "astro": "^6.3.3",
+    "oxlint": "^1.65.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "react": "^19.2.6",
@@ -36,7 +36,7 @@
     "sass-embedded": "^1.99.0",
     "sharp": "^0.34.5",
     "typescript": "^6.0.3",
-    "wrangler": "^4.90.1"
+    "wrangler": "^4.92.0"
   },
   "packageManager": "pnpm@10.27.0+sha512.72d699da16b1179c14ba9e64dc71c9a40988cbdc65c264cb0e489db7de917f20dcf4d64d8723625f2969ba52d4b7e2a1170682d9ac2a5dcaeaab732b7e16f04a"
 }
