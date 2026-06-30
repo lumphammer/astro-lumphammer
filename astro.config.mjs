@@ -1,10 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
 import react from "@astrojs/react";
-
 import rehypeExternalLinks from "rehype-external-links";
-
 import cloudflare from "@astrojs/cloudflare";
 import { unified } from "@astrojs/markdown-remark";
 
@@ -14,6 +11,7 @@ export default defineConfig({
   output: "static",
 
   markdown: {
+    // https://docs.astro.build/en/reference/configuration-reference/#markdownprocessor
     processor: unified({
       rehypePlugins: [
         [
