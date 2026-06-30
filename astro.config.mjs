@@ -1,11 +1,9 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
 import react from "@astrojs/react";
-
 import rehypeExternalLinks from "rehype-external-links";
-
 import cloudflare from "@astrojs/cloudflare";
+import { unified } from "@astrojs/markdown-remark";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,12 +11,15 @@ export default defineConfig({
   output: "static",
 
   markdown: {
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        { target: "_blank", rel: ["noopener", "nofollow", "noreferrer"] },
+    // https://docs.astro.build/en/reference/configuration-reference/#markdownprocessor
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          { target: "_blank", rel: ["noopener", "nofollow", "noreferrer"] },
+        ],
       ],
-    ],
+    }),
   },
 
   adapter: cloudflare({
