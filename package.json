@@ -18,26 +18,26 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",
-    "@astrojs/cloudflare": "^14.4.6",
-    "@astrojs/markdown-remark": "^7.3.6",
-    "@astrojs/react": "^7.1.4",
+    "@astrojs/cloudflare": "^14.4.8",
+    "@astrojs/markdown-remark": "^7.3.9",
+    "@astrojs/react": "^7.1.9",
     "@picocss/pico": "^2.1.1",
     "@prettier/plugin-xml": "^3.4.2",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "astro": "^7.4.7",
-    "oxlint": "^1.92.0",
-    "prettier": "^3.9.10",
+    "astro": "^7.4.12",
+    "oxlint": "^1.93.0",
+    "prettier": "^3.10.1",
     "prettier-plugin-astro": "^1.1.2",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-icons": "^5.7.0",
     "rehype-external-links": "^3.0.0",
-    "sass-embedded": "^1.108.1",
+    "sass-embedded": "^1.108.2",
     "sharp": "^0.35.5",
     "typescript": "^7.0.2",
-    "wrangler": "^4.158.0"
+    "wrangler": "^4.162.0"
   },
-  "packageManager": "pnpm@12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3"
+  "packageManager": "pnpm@12.21.0+sha512.66fd8278ee28935ce951792d34367ff3af5c432a2756445823029533835b8da529bbe0be5130afd56ed0713fb8789e47bad82d93bd5ae2fe54b15562d6276ef0"
 }
